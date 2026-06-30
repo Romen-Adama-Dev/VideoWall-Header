@@ -24,7 +24,6 @@
                 <div class="header-right">
                     <div id="dia" class="weather-right-day"></div>
                     <div id="fecha" class="weather-right-date"></div>
-                    <div id="temp" class="digital-temp"></div>
                 </div>
             </div>
         </section>
