@@ -74,8 +74,10 @@ body {
 .header-right {
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  text-align: right;
+  align-items: center;
+  text-align: center;
+  padding-right: 28px;
+  box-sizing: border-box;
 }
 
 .header-logo img {
