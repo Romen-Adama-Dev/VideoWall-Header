@@ -1,0 +1,6 @@
+/api/config.php
+/cache/*.json
+*.log
+
+__MACOSX/
+*/__MACOSX/
