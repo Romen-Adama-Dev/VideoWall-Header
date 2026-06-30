@@ -153,4 +153,84 @@ body {
   margin-top: -30px;
 }
 
+@keyframes logoSweepIn {
+  from {
+    opacity: 0;
+    transform: translateX(-28px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes weatherRiseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes weatherSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.logo img {
+  animation: logoSweepIn 900ms ease-out both;
+}
+
+.weather-left > *,
+.weather-right > * {
+  opacity: 1;
+}
+
+.weather-left > * {
+  animation: weatherRiseIn 700ms ease-out both;
+}
+
+.weather-right > * {
+  animation: weatherSlideIn 700ms ease-out both;
+}
+
+.weather-left > :nth-child(1) {
+  animation-delay: 150ms;
+}
+
+.weather-left > :nth-child(2) {
+  animation-delay: 260ms;
+}
+
+.weather-right > :nth-child(1) {
+  animation-delay: 320ms;
+}
+
+.weather-right > :nth-child(2) {
+  animation-delay: 420ms;
+}
+
+.weather-right > :nth-child(3) {
+  animation-delay: 520ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo img,
+  .weather-left > *,
+  .weather-right > * {
+    animation: none;
+  }
+}
 
