@@ -52,8 +52,22 @@ async function cargarTiempo() {
     }
 }
 
+function lanzarAnimaciones() {
+    const header = document.querySelector(".header-service");
+    if (!header) return;
+
+    header.classList.remove("is-ready");
+    header.classList.add("is-booting");
+    void header.offsetWidth;
+    header.classList.add("is-ready");
+    window.setTimeout(() => {
+        header.classList.remove("is-booting");
+    }, 1900);
+}
+
 actualizarReloj();
 cargarTiempo();
+lanzarAnimaciones();
 
 setInterval(actualizarReloj, 1000);
 setInterval(cargarTiempo, 5 * 60 * 1000);

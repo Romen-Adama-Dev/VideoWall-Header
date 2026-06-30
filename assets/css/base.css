@@ -156,11 +156,13 @@ body {
 @keyframes logoSweepIn {
   from {
     opacity: 0;
-    transform: translateX(-28px) scale(0.96);
+    filter: blur(8px);
+    transform: translateX(-34px) scale(0.96);
   }
 
   to {
     opacity: 1;
+    filter: blur(0);
     transform: translateX(0) scale(1);
   }
 }
@@ -168,11 +170,13 @@ body {
 @keyframes weatherRiseIn {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    filter: blur(8px);
+    transform: translateY(26px);
   }
 
   to {
     opacity: 1;
+    filter: blur(0);
     transform: translateY(0);
   }
 }
@@ -180,50 +184,61 @@ body {
 @keyframes weatherSlideIn {
   from {
     opacity: 0;
-    transform: translateX(24px);
+    filter: blur(8px);
+    transform: translateX(34px);
   }
 
   to {
     opacity: 1;
+    filter: blur(0);
     transform: translateX(0);
   }
 }
 
-.logo img {
-  animation: logoSweepIn 900ms ease-out both;
-}
-
+.logo img,
 .weather-left > *,
 .weather-right > * {
   opacity: 1;
+  filter: none;
 }
 
-.weather-left > * {
-  animation: weatherRiseIn 700ms ease-out both;
+.header-service.is-booting .logo img,
+.header-service.is-booting .weather-left > *,
+.header-service.is-booting .weather-right > * {
+  opacity: 0;
+  filter: blur(8px);
 }
 
-.weather-right > * {
-  animation: weatherSlideIn 700ms ease-out both;
+.header-service.is-ready .logo img {
+  animation: logoSweepIn 1100ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.weather-left > :nth-child(1) {
-  animation-delay: 150ms;
+.header-service.is-ready .weather-left > * {
+  animation: weatherRiseIn 950ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.weather-left > :nth-child(2) {
-  animation-delay: 260ms;
+.header-service.is-ready .weather-right > * {
+  animation: weatherSlideIn 950ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.weather-right > :nth-child(1) {
-  animation-delay: 320ms;
+.header-service.is-ready .weather-left > :nth-child(1) {
+  animation-delay: 180ms;
 }
 
-.weather-right > :nth-child(2) {
-  animation-delay: 420ms;
+.header-service.is-ready .weather-left > :nth-child(2) {
+  animation-delay: 360ms;
 }
 
-.weather-right > :nth-child(3) {
-  animation-delay: 520ms;
+.header-service.is-ready .weather-right > :nth-child(1) {
+  animation-delay: 480ms;
+}
+
+.header-service.is-ready .weather-right > :nth-child(2) {
+  animation-delay: 620ms;
+}
+
+.header-service.is-ready .weather-right > :nth-child(3) {
+  animation-delay: 760ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -231,6 +246,8 @@ body {
   .weather-left > *,
   .weather-right > * {
     animation: none;
+    filter: none;
+    opacity: 1;
   }
 }
 

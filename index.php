@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <main class="header-service" aria-label="Cabecera VideoWall">
+    <main class="header-service is-booting" aria-label="Cabecera VideoWall">
         <section id="banner-tiempo" class="banner">
             <div class="banner-tiempo-content">
                 <div class="logo">
