@@ -4,7 +4,7 @@ Servicio independiente para mostrar la cabecera azul del VideoWall de Dielca: lo
 
 ## Configuracion
 
-La API de clima usa OpenWeather. Configura la clave de una de estas formas:
+La API de clima usa Open-Meteo por defecto, sin clave API. Si quieres usar OpenWeather, configura la clave de una de estas formas:
 
 1. Variable de entorno `OPENWEATHER_API_KEY`.
 2. Copia `api/config.example.php` a `api/config.php` y rellena `openweather_api_key`.
@@ -31,7 +31,7 @@ Edita `.env`:
 
 ```env
 APP_PORT=8080
-OPENWEATHER_API_KEY=tu-api-key
+OPENWEATHER_API_KEY=
 WEATHER_LAT=28.1235
 WEATHER_LON=-15.4363
 TZ=Atlantic/Canary
