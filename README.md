@@ -18,3 +18,52 @@ php -S localhost:8080
 ```
 
 Abre `http://localhost:8080`.
+
+## Docker
+
+Copia el archivo de entorno y configura tu clave:
+
+```bash
+cp .env.example .env
+```
+
+Edita `.env`:
+
+```env
+APP_PORT=8080
+OPENWEATHER_API_KEY=tu-api-key
+WEATHER_LAT=28.1235
+WEATHER_LON=-15.4363
+```
+
+Levanta el servicio:
+
+```bash
+docker compose up -d --build
+```
+
+El header quedara expuesto en `http://localhost:8080` si mantienes `APP_PORT=8080`.
+
+Comprobacion rapida:
+
+```bash
+curl http://localhost:8080/health.php
+```
+
+Para parar el servicio:
+
+```bash
+docker compose down
+```
+
+### Exponer en servidor
+
+En el servidor, ajusta `APP_PORT` en `.env` al puerto interno que quieras publicar, por ejemplo:
+
+```env
+APP_PORT=8091
+```
+
+Con eso el contenedor queda disponible en `http://IP_DEL_SERVER:8091`.
+
+Si usas Nginx Proxy Manager, Traefik o un Nginx frontal, apunta el proxy al host del servidor y al puerto configurado en `APP_PORT`.

@@ -1,4 +1,5 @@
 /api/config.php
+/.env
 /cache/*.json
 *.log
 
