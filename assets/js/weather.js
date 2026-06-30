@@ -1,5 +1,6 @@
 async function cargarTiempo() {
     try {
+        const timeZone = "Atlantic/Canary";
         const baseUrl = window.location.pathname.replace(/\/[^\/]*$/, "");
         const respuesta = await fetch(`${baseUrl}/api/weather.php?ts=${Date.now()}`, { cache: "no-store" });
 
@@ -16,14 +17,16 @@ async function cargarTiempo() {
         const ahora = new Date();
         const hora = ahora.toLocaleTimeString("es-ES", {
             hour: "2-digit",
-            minute: "2-digit"
+            minute: "2-digit",
+            timeZone
         });
 
         const diaSemana = ahora.toLocaleDateString("es-ES", {
-            weekday: "long"
+            weekday: "long",
+            timeZone
         }).toUpperCase();
 
-        const fecha = ahora.toLocaleDateString("es-ES");
+        const fecha = ahora.toLocaleDateString("es-ES", { timeZone });
 
         document.getElementById("hora").textContent = hora;
         document.getElementById("desc").textContent = descripcion;

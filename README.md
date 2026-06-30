@@ -34,6 +34,7 @@ APP_PORT=8080
 OPENWEATHER_API_KEY=tu-api-key
 WEATHER_LAT=28.1235
 WEATHER_LON=-15.4363
+TZ=Atlantic/Canary
 ```
 
 Levanta el servicio:
@@ -67,3 +68,11 @@ APP_PORT=8091
 Con eso el contenedor queda disponible en `http://IP_DEL_SERVER:8091`.
 
 Si usas Nginx Proxy Manager, Traefik o un Nginx frontal, apunta el proxy al host del servidor y al puerto configurado en `APP_PORT`.
+
+La configuracion por defecto queda preparada para Las Palmas de Gran Canaria:
+
+```env
+WEATHER_LAT=28.1235
+WEATHER_LON=-15.4363
+TZ=Atlantic/Canary
+```

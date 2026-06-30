@@ -7,6 +7,7 @@ services:
       OPENWEATHER_API_KEY: ${OPENWEATHER_API_KEY:-}
       WEATHER_LAT: ${WEATHER_LAT:-28.1235}
       WEATHER_LON: ${WEATHER_LON:--15.4363}
+      TZ: ${TZ:-Atlantic/Canary}
     ports:
       - "${APP_PORT:-8080}:80"
     volumes:
